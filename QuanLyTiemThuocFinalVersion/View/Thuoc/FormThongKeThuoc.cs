@@ -61,8 +61,11 @@ namespace QuanLyTiemThuocFinalVersion.View.Thuoc
             //xem có tra theo công dụng hay không
             if (!string.IsNullOrEmpty(TienIch.XoaKhoangTrang(tbCongDung.Text)))
             {
-                string sqlSelectId = "Select Id from CongDung where Ten=N'" + TienIch.XoaKhoangTrang(tbCongDung.Text) + "'";
-                whereCongDung = "and t.id in( select IdThuoc from ThuocCongDung tvcd where " + " tvcd.IdCongDung=" + sqlSelectId + ")";
+                int sqlSelectId = DataBaseFunction.GetItemId("Select Id from CongDung where Ten like N'%" + TienIch.XoaKhoangTrang(tbCongDung.Text) + "%'");
+                if (sqlSelectId > 0)
+                {
+                    whereCongDung = "and t.id in( select IdThuoc from ThuocCongDung tvcd where " + " tvcd.IdCongDung=" + sqlSelectId + ")";
+                }
             }
 
             //xem có tra theo thành phần hay không

@@ -1,6 +1,5 @@
 ﻿using QuanLyTiemThuocFinalVersion.View.HoaDonBan;
 using QuanLyTiemThuocFinalVersion.View.HoaDonNhap;
-using QuanLyTiemThuocFinalVersion.View.NhanVien;
 using QuanLyTiemThuocFinalVersion.View.Thuoc;
 using QuanLyTiemThuocFinalVersion.View.TrangChu;
 using System;
@@ -125,24 +124,7 @@ namespace QuanLyTiemThuocFinalVersion
             }
         }
 
-        private void menuThemMoiNhanVien_Click(object sender, EventArgs e)
-        {
-            if (this.MdiChildren.Length > 0)
-            {
-                if (!this.MdiChildren[0].Name.Equals("FormThemMoiNhanVien"))
-                {
-                    disposeAllMDIChildrenForms();
-                    FormThemMoiNhanVien formThemMoiNhanVien = new FormThemMoiNhanVien();
-                    showFormInMDIContainer(formThemMoiNhanVien);
-                }
-            }
-            else
-            {
-                FormThemMoiNhanVien formThemMoiNhanVien = new FormThemMoiNhanVien();
-                showFormInMDIContainer(formThemMoiNhanVien);
-            }
-
-        }
+      
 
         private void menuThongKeNhanVien_Click(object sender, EventArgs e)
         {

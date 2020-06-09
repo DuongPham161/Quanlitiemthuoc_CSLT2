@@ -88,7 +88,6 @@
             this.cbxTenThuoc.Name = "cbxTenThuoc";
             this.cbxTenThuoc.Size = new System.Drawing.Size(421, 28);
             this.cbxTenThuoc.TabIndex = 3;
-            
             // 
             // cbxKhachHang
             // 
@@ -98,7 +97,6 @@
             this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Size = new System.Drawing.Size(421, 28);
             this.cbxKhachHang.TabIndex = 4;
-            
             // 
             // label4
             // 
@@ -132,7 +130,6 @@
             this.tbSoLuong.Size = new System.Drawing.Size(112, 26);
             this.tbSoLuong.TabIndex = 7;
             this.tbSoLuong.Text = "1";
-           
             // 
             // label6
             // 
@@ -162,7 +159,6 @@
             this.tbGiamGia.Size = new System.Drawing.Size(97, 26);
             this.tbGiamGia.TabIndex = 9;
             this.tbGiamGia.Text = "0";
-            
             // 
             // dgvBanThuoc
             // 
@@ -174,7 +170,6 @@
             this.dgvBanThuoc.RowHeadersWidth = 62;
             this.dgvBanThuoc.Size = new System.Drawing.Size(1116, 386);
             this.dgvBanThuoc.TabIndex = 11;
-           
             // 
             // btnLuuHoaDon
             // 
@@ -186,7 +181,6 @@
             this.btnLuuHoaDon.TabIndex = 12;
             this.btnLuuHoaDon.Text = "Lưu Hóa Đơn";
             this.btnLuuHoaDon.UseVisualStyleBackColor = true;
-            
             // 
             // btnXoa
             // 
@@ -198,7 +192,6 @@
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-         
             // 
             // btnThemVaoDon
             // 
@@ -209,7 +202,6 @@
             this.btnThemVaoDon.TabIndex = 14;
             this.btnThemVaoDon.Text = "Thêm Vào Đơn";
             this.btnThemVaoDon.UseVisualStyleBackColor = true;
-           
             // 
             // lblidNhanVien
             // 
@@ -228,7 +220,6 @@
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(421, 28);
             this.cbxNhanVien.TabIndex = 16;
-      
             // 
             // FormBanThuoc
             // 
@@ -256,7 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormBanThuoc";
             this.Text = "FormBanThuoc";
-                     ((System.ComponentModel.ISupportInitialize)(this.dgvBanThuoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBanThuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

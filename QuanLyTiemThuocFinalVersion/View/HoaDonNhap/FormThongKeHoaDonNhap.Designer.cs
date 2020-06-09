@@ -91,7 +91,6 @@
             this.cbxNhaCungCap.Name = "cbxNhaCungCap";
             this.cbxNhaCungCap.Size = new System.Drawing.Size(274, 28);
             this.cbxNhaCungCap.TabIndex = 6;
-   
             // 
             // cbxNhanVien
             // 
@@ -101,7 +100,6 @@
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(274, 28);
             this.cbxNhanVien.TabIndex = 7;
-       
             // 
             // cbxHoaDonNhap
             // 
@@ -111,7 +109,6 @@
             this.cbxHoaDonNhap.Name = "cbxHoaDonNhap";
             this.cbxHoaDonNhap.Size = new System.Drawing.Size(274, 28);
             this.cbxHoaDonNhap.TabIndex = 8;
-      
             // 
             // btnTimKiem
             // 
@@ -122,7 +119,7 @@
             this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
-          
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // dgvHoaDonNhap
             // 
@@ -134,7 +131,6 @@
             this.dgvHoaDonNhap.RowHeadersWidth = 62;
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(1215, 494);
             this.dgvHoaDonNhap.TabIndex = 14;
-            
             // 
             // btnXemTatCa
             // 
@@ -145,7 +141,7 @@
             this.btnXemTatCa.TabIndex = 15;
             this.btnXemTatCa.Text = "Xem Tất Cả";
             this.btnXemTatCa.UseVisualStyleBackColor = true;
-
+            this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
             // 
             // FormThongKeHoaDonNhap
             // 
@@ -166,7 +162,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormThongKeHoaDonNhap";
             this.Text = "FormThongKeHoaDonNhap";
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

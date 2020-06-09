@@ -30,11 +30,12 @@
         {
             this.lbQuy = new System.Windows.Forms.Label();
             this.lbNam = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnThongKeNhanVien = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cbxQuy = new System.Windows.Forms.ComboBox();
+            this.dtpNam = new System.Windows.Forms.DateTimePicker();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // lbQuy
@@ -57,59 +58,75 @@
             this.lbNam.TabIndex = 1;
             this.lbNam.Text = "Năm";
             // 
-            // comboBox1
+            // cbxQuy
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(184, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 28);
-            this.comboBox1.TabIndex = 2;
+            this.cbxQuy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxQuy.FormattingEnabled = true;
+            this.cbxQuy.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.cbxQuy.Location = new System.Drawing.Point(184, 45);
+            this.cbxQuy.Name = "cbxQuy";
+            this.cbxQuy.Size = new System.Drawing.Size(86, 28);
+            this.cbxQuy.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtpNam
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(372, 46);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 26);
-            this.dateTimePicker1.TabIndex = 3;
-            
+            this.dtpNam.CustomFormat = "yyyy";
+            this.dtpNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNam.Location = new System.Drawing.Point(372, 46);
+            this.dtpNam.Name = "dtpNam";
+            this.dtpNam.Size = new System.Drawing.Size(108, 26);
+            this.dtpNam.TabIndex = 3;
             // 
-            // btnThongKeNhanVien
+            // btnThongKe
             // 
-            this.btnThongKeNhanVien.Location = new System.Drawing.Point(508, 41);
-            this.btnThongKeNhanVien.Name = "btnThongKeNhanVien";
-            this.btnThongKeNhanVien.Size = new System.Drawing.Size(158, 40);
-            this.btnThongKeNhanVien.TabIndex = 4;
-            this.btnThongKeNhanVien.Text = "Thống kê";
-            this.btnThongKeNhanVien.UseVisualStyleBackColor = true;
-         
+            this.btnThongKe.Location = new System.Drawing.Point(508, 41);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(158, 40);
+            this.btnThongKe.TabIndex = 4;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // dataGridView1
+            // dgvNhanVien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 119);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 375);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvNhanVien.AllowUserToAddRows = false;
+            this.dgvNhanVien.AllowUserToDeleteRows = false;
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.Location = new System.Drawing.Point(31, 119);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.RowHeadersWidth = 62;
+            this.dgvNhanVien.RowTemplate.Height = 28;
+            this.dgvNhanVien.Size = new System.Drawing.Size(880, 375);
+            this.dgvNhanVien.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-2, -4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(334, 29);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Báo Cáo Nhân Viên Bán Hàng";
             // 
             // FormBaoCaoNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 587);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnThongKeNhanVien);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgvNhanVien);
+            this.Controls.Add(this.btnThongKe);
+            this.Controls.Add(this.dtpNam);
+            this.Controls.Add(this.cbxQuy);
             this.Controls.Add(this.lbNam);
             this.Controls.Add(this.lbQuy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaoCaoNhanVien";
-            this.Text = "Báo Cáo Nhân Viên";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,9 +136,10 @@
 
         private System.Windows.Forms.Label lbQuy;
         private System.Windows.Forms.Label lbNam;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button btnThongKeNhanVien;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cbxQuy;
+        private System.Windows.Forms.DateTimePicker dtpNam;
+        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.Label label1;
     }
 }

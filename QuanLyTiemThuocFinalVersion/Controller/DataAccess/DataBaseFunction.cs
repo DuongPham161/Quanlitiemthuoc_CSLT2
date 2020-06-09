@@ -84,7 +84,7 @@ namespace QuanLyTiemThuocFinalVersion.Controller.DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Thông tin sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 MessageBox.Show(ex.ToString());
             }
             cmd.Dispose();

@@ -20,21 +20,7 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
             InitializeComponent();
         }
        
-        private void prepareDataToEdit(DataGridViewCellEventArgs e)
-        {
-            cbxNhaCungCap.Enabled = true;
-            dtpNgayNhap.Enabled = true;
-
-            cbxTenThuoc.Text = dgvHoaDonNhap.Rows[e.RowIndex].Cells[0].Value.ToString();
-            tvSoLuongNhap.Text = dgvHoaDonNhap.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tvDonGia.Text = dgvHoaDonNhap.Rows[e.RowIndex].Cells[2].Value.ToString();
-            tbKhuyenMai.Text = dgvHoaDonNhap.Rows[e.RowIndex].Cells[3].Value.ToString();
-            cbxNhaCungCap.Text = dgvHoaDonNhap.Rows[e.RowIndex].Cells[4].Value.ToString();
-            dtpNgayNhap.Value = DateTime.Parse(dgvHoaDonNhap.Rows[e.RowIndex].Cells[5].Value.ToString());
-            dtpNgaySanXuat.Value = DateTime.Parse(dgvHoaDonNhap.Rows[e.RowIndex].Cells[6].Value.ToString());
-            dtpHanSuDung.Value = DateTime.Parse(dgvHoaDonNhap.Rows[e.RowIndex].Cells[7].Value.ToString());
-        }
-
+        
        
     }
 }

@@ -155,7 +155,6 @@
             this.btnNhap.TabIndex = 9;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.UseVisualStyleBackColor = true;
-           
             // 
             // tvDonGia
             // 
@@ -164,7 +163,6 @@
             this.tvDonGia.Name = "tvDonGia";
             this.tvDonGia.Size = new System.Drawing.Size(386, 26);
             this.tvDonGia.TabIndex = 10;
-           
             // 
             // tvSoLuongNhap
             // 
@@ -173,7 +171,6 @@
             this.tvSoLuongNhap.Name = "tvSoLuongNhap";
             this.tvSoLuongNhap.Size = new System.Drawing.Size(382, 26);
             this.tvSoLuongNhap.TabIndex = 11;
-            
             // 
             // tbKhuyenMai
             // 
@@ -182,7 +179,6 @@
             this.tbKhuyenMai.Name = "tbKhuyenMai";
             this.tbKhuyenMai.Size = new System.Drawing.Size(382, 26);
             this.tbKhuyenMai.TabIndex = 12;
-           
             // 
             // cbxTenThuoc
             // 
@@ -192,7 +188,6 @@
             this.cbxTenThuoc.Name = "cbxTenThuoc";
             this.cbxTenThuoc.Size = new System.Drawing.Size(386, 28);
             this.cbxTenThuoc.TabIndex = 13;
-           
             // 
             // cbxNhaCungCap
             // 
@@ -202,7 +197,6 @@
             this.cbxNhaCungCap.Name = "cbxNhaCungCap";
             this.cbxNhaCungCap.Size = new System.Drawing.Size(386, 28);
             this.cbxNhaCungCap.TabIndex = 14;
-          
             // 
             // dtpNgayNhap
             // 
@@ -211,7 +205,6 @@
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(382, 26);
             this.dtpNgayNhap.TabIndex = 15;
-          
             // 
             // dtpNgaySanXuat
             // 
@@ -220,7 +213,6 @@
             this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
             this.dtpNgaySanXuat.Size = new System.Drawing.Size(386, 26);
             this.dtpNgaySanXuat.TabIndex = 16;
-          
             // 
             // dtpHanSuDung
             // 
@@ -229,7 +221,6 @@
             this.dtpHanSuDung.Name = "dtpHanSuDung";
             this.dtpHanSuDung.Size = new System.Drawing.Size(382, 26);
             this.dtpHanSuDung.TabIndex = 17;
-           
             // 
             // btnThem
             // 
@@ -241,7 +232,6 @@
             this.btnThem.TabIndex = 19;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-           
             // 
             // dgvHoaDonNhap
             // 
@@ -254,7 +244,6 @@
             this.dgvHoaDonNhap.RowHeadersWidth = 62;
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(1125, 363);
             this.dgvHoaDonNhap.TabIndex = 20;
-           
             // 
             // label9
             // 
@@ -273,7 +262,6 @@
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(386, 28);
             this.cbxNhanVien.TabIndex = 22;
-
             // 
             // FormThemMoiHoaDonNhap
             // 
@@ -306,7 +294,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormThemMoiHoaDonNhap";
             this.Text = "FormThemMoiHoaDonNhap";
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

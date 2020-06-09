@@ -115,18 +115,6 @@
     <Compile Include="View\HoaDonNhap\FormThongKeHoaDonNhap.Designer.cs">
       <DependentUpon>FormThongKeHoaDonNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\NhanVien\FormThemMoiNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\NhanVien\FormThemMoiNhanVien.Designer.cs">
-      <DependentUpon>FormThemMoiNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\NhanVien\FormThongKeNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\NhanVien\FormThongKeNhanVien.Designer.cs">
-      <DependentUpon>FormThongKeNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Thuoc\FormThongKeThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,12 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\HoaDonNhap\FormThongKeHoaDonNhap.resx">
       <DependentUpon>FormThongKeHoaDonNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\NhanVien\FormThemMoiNhanVien.resx">
-      <DependentUpon>FormThemMoiNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\NhanVien\FormThongKeNhanVien.resx">
-      <DependentUpon>FormThongKeNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Thuoc\FormThongKeThuoc.resx">
       <DependentUpon>FormThongKeThuoc.cs</DependentUpon>
