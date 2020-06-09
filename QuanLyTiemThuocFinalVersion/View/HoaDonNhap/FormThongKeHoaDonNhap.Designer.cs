@@ -131,6 +131,7 @@
             this.dgvHoaDonNhap.RowHeadersWidth = 62;
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(1215, 494);
             this.dgvHoaDonNhap.TabIndex = 14;
+            this.dgvHoaDonNhap.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellDoubleClick);
             // 
             // btnXemTatCa
             // 

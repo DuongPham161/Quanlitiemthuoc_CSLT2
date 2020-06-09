@@ -155,6 +155,7 @@
             this.btnNhap.TabIndex = 9;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // tvDonGia
             // 
@@ -163,6 +164,7 @@
             this.tvDonGia.Name = "tvDonGia";
             this.tvDonGia.Size = new System.Drawing.Size(386, 26);
             this.tvDonGia.TabIndex = 10;
+            this.tvDonGia.Leave += new System.EventHandler(this.tvDonGia_Leave);
             // 
             // tvSoLuongNhap
             // 
@@ -171,6 +173,7 @@
             this.tvSoLuongNhap.Name = "tvSoLuongNhap";
             this.tvSoLuongNhap.Size = new System.Drawing.Size(382, 26);
             this.tvSoLuongNhap.TabIndex = 11;
+            this.tvSoLuongNhap.Leave += new System.EventHandler(this.tvSoLuongNhap_Leave);
             // 
             // tbKhuyenMai
             // 
@@ -179,6 +182,7 @@
             this.tbKhuyenMai.Name = "tbKhuyenMai";
             this.tbKhuyenMai.Size = new System.Drawing.Size(382, 26);
             this.tbKhuyenMai.TabIndex = 12;
+            this.tbKhuyenMai.Leave += new System.EventHandler(this.tbKhuyenMai_Leave);
             // 
             // cbxTenThuoc
             // 
@@ -188,6 +192,7 @@
             this.cbxTenThuoc.Name = "cbxTenThuoc";
             this.cbxTenThuoc.Size = new System.Drawing.Size(386, 28);
             this.cbxTenThuoc.TabIndex = 13;
+            this.cbxTenThuoc.Leave += new System.EventHandler(this.cbxTenThuoc_Leave);
             // 
             // cbxNhaCungCap
             // 
@@ -197,6 +202,7 @@
             this.cbxNhaCungCap.Name = "cbxNhaCungCap";
             this.cbxNhaCungCap.Size = new System.Drawing.Size(386, 28);
             this.cbxNhaCungCap.TabIndex = 14;
+            this.cbxNhaCungCap.Leave += new System.EventHandler(this.cbxNhaCungCap_Leave);
             // 
             // dtpNgayNhap
             // 
@@ -205,6 +211,7 @@
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(382, 26);
             this.dtpNgayNhap.TabIndex = 15;
+            this.dtpNgayNhap.Leave += new System.EventHandler(this.dtpNgayNhap_Leave);
             // 
             // dtpNgaySanXuat
             // 
@@ -213,6 +220,7 @@
             this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
             this.dtpNgaySanXuat.Size = new System.Drawing.Size(386, 26);
             this.dtpNgaySanXuat.TabIndex = 16;
+            this.dtpNgaySanXuat.Leave += new System.EventHandler(this.dtpNgaySanXuat_Leave);
             // 
             // dtpHanSuDung
             // 
@@ -221,6 +229,7 @@
             this.dtpHanSuDung.Name = "dtpHanSuDung";
             this.dtpHanSuDung.Size = new System.Drawing.Size(382, 26);
             this.dtpHanSuDung.TabIndex = 17;
+            this.dtpHanSuDung.Leave += new System.EventHandler(this.dtpHanSuDung_Leave);
             // 
             // btnThem
             // 
@@ -232,6 +241,7 @@
             this.btnThem.TabIndex = 19;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvHoaDonNhap
             // 
@@ -244,6 +254,8 @@
             this.dgvHoaDonNhap.RowHeadersWidth = 62;
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(1125, 363);
             this.dgvHoaDonNhap.TabIndex = 20;
+            this.dgvHoaDonNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellClick);
+            this.dgvHoaDonNhap.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellDoubleClick);
             // 
             // label9
             // 
@@ -262,6 +274,7 @@
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(386, 28);
             this.cbxNhanVien.TabIndex = 22;
+            this.cbxNhanVien.Leave += new System.EventHandler(this.cbxNhanVien_Leave);
             // 
             // FormThemMoiHoaDonNhap
             // 
@@ -294,6 +307,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormThemMoiHoaDonNhap";
             this.Text = "FormThemMoiHoaDonNhap";
+            this.Load += new System.EventHandler(this.FormThemMoiHoaDonNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

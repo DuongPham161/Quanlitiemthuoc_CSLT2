@@ -44,7 +44,7 @@
             this.btnXemBaoCao.TabIndex = 14;
             this.btnXemBaoCao.Text = "Xem Báo Cáo";
             this.btnXemBaoCao.UseVisualStyleBackColor = true;
-           
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
             // cbxThang
             // 
@@ -67,6 +67,7 @@
             this.cbxThang.Name = "cbxThang";
             this.cbxThang.Size = new System.Drawing.Size(126, 28);
             this.cbxThang.TabIndex = 13;
+            this.cbxThang.Leave += new System.EventHandler(this.cbxThang_Leave);
             // 
             // lbThang
             // 
@@ -80,19 +81,21 @@
             // 
             // dgvHoaDonNhap
             // 
+            this.dgvHoaDonNhap.AllowUserToAddRows = false;
             this.dgvHoaDonNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDonNhap.Location = new System.Drawing.Point(52, 143);
             this.dgvHoaDonNhap.Name = "dgvHoaDonNhap";
             this.dgvHoaDonNhap.RowHeadersWidth = 62;
             this.dgvHoaDonNhap.RowTemplate.Height = 28;
-            this.dgvHoaDonNhap.Size = new System.Drawing.Size(831, 417);
+            this.dgvHoaDonNhap.Size = new System.Drawing.Size(1050, 440);
             this.dgvHoaDonNhap.TabIndex = 16;
+            this.dgvHoaDonNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellClick);
             // 
             // FormBaoCaoHDNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 621);
+            this.ClientSize = new System.Drawing.Size(1098, 595);
             this.Controls.Add(this.dgvHoaDonNhap);
             this.Controls.Add(this.lbThang);
             this.Controls.Add(this.btnXemBaoCao);

@@ -127,6 +127,39 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
             cbxNhaCungCap.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+        private void dgvHoaDonNhap_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string maHoaDon = dgvHoaDonNhap.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string sqlSelect = "Select h.Id as 'Mã Bản Ghi',  h.IdHoaDonNhap as 'Mã Hóa Đơn Nhập', " +
+                " (select t.Ten  from Thuoc t where t.Id = h.IdThuoc) as 'Tên Thuốc', " +
+                " h.SoLuongNhap as 'Số Lượng Nhập', h.DonGia as 'Đơn Giá', h.KhuyenMai as 'Khuyến Mại', h.ThanhTien as 'Thành Tiền'  " +
+                " from HoaDonNhapDetail h where IdHoaDonNhap = " + maHoaDon;
+            DataTable tableChiTietHoaDonNhap = DataBaseFunction.GetDataToTable(sqlSelect);
 
+            dgvHoaDonNhap.DataSource = tableChiTietHoaDonNhap;
+
+            Microsoft.Office.Interop.Excel.Application excel
+                = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(Type.Missing);
+
+            for (int i = 1; i < dgvHoaDonNhap.Columns.Count + 1; i++)
+            {
+                excel.Cells[1, i] = dgvHoaDonNhap.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvHoaDonNhap.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvHoaDonNhap.Columns.Count; j++)
+                {
+                    excel.Cells[i + 2, j + 1] = dgvHoaDonNhap.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            excel.Columns.AutoFit();
+            excel.Visible = true;
+            excel.DisplayFullScreen = true;
+
+            dgvHoaDonNhap.DataSource = null;
+            LoadDataToTable();
+        }
     }
 }

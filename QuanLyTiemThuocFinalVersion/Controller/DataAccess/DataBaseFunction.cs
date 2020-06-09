@@ -18,7 +18,7 @@ namespace QuanLyTiemThuocFinalVersion.Controller.DataAccess
         {
             //Thiết lập giá trị cho chuỗi kết nối
             connString = @"Data Source=DESKTOP-K1R62TD\SQLEXPRESS;Initial Catalog=Quanlitiemthuoc;Integrated Security=True";
-           
+
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
             Conn.Open();
@@ -84,7 +84,7 @@ namespace QuanLyTiemThuocFinalVersion.Controller.DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thông tin sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Something went wrong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 MessageBox.Show(ex.ToString());
             }
             cmd.Dispose();

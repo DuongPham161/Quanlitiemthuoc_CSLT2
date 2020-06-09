@@ -88,6 +88,7 @@
             this.cbxTenThuoc.Name = "cbxTenThuoc";
             this.cbxTenThuoc.Size = new System.Drawing.Size(421, 28);
             this.cbxTenThuoc.TabIndex = 3;
+            this.cbxTenThuoc.Leave += new System.EventHandler(this.cbxTenThuoc_Leave);
             // 
             // cbxKhachHang
             // 
@@ -97,6 +98,7 @@
             this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Size = new System.Drawing.Size(421, 28);
             this.cbxKhachHang.TabIndex = 4;
+            this.cbxKhachHang.Leave += new System.EventHandler(this.cbxKhachHang_Leave);
             // 
             // label4
             // 
@@ -130,6 +132,7 @@
             this.tbSoLuong.Size = new System.Drawing.Size(112, 26);
             this.tbSoLuong.TabIndex = 7;
             this.tbSoLuong.Text = "1";
+            this.tbSoLuong.Leave += new System.EventHandler(this.tbSoLuong_Leave);
             // 
             // label6
             // 
@@ -159,6 +162,7 @@
             this.tbGiamGia.Size = new System.Drawing.Size(97, 26);
             this.tbGiamGia.TabIndex = 9;
             this.tbGiamGia.Text = "0";
+            this.tbGiamGia.Leave += new System.EventHandler(this.tbGiamGia_Leave);
             // 
             // dgvBanThuoc
             // 
@@ -181,6 +185,7 @@
             this.btnLuuHoaDon.TabIndex = 12;
             this.btnLuuHoaDon.Text = "Lưu Hóa Đơn";
             this.btnLuuHoaDon.UseVisualStyleBackColor = true;
+            this.btnLuuHoaDon.Click += new System.EventHandler(this.btnLuuHoaDon_Click);
             // 
             // btnXoa
             // 
@@ -192,6 +197,7 @@
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThemVaoDon
             // 
@@ -202,6 +208,7 @@
             this.btnThemVaoDon.TabIndex = 14;
             this.btnThemVaoDon.Text = "Thêm Vào Đơn";
             this.btnThemVaoDon.UseVisualStyleBackColor = true;
+            this.btnThemVaoDon.Click += new System.EventHandler(this.btnThemVaoDon_Click);
             // 
             // lblidNhanVien
             // 
@@ -220,6 +227,7 @@
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(421, 28);
             this.cbxNhanVien.TabIndex = 16;
+            this.cbxNhanVien.Leave += new System.EventHandler(this.cbxNhanVien_Leave);
             // 
             // FormBanThuoc
             // 
@@ -247,6 +255,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormBanThuoc";
             this.Text = "FormBanThuoc";
+            this.Load += new System.EventHandler(this.FormBanThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanThuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
