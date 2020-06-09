@@ -99,8 +99,7 @@ namespace QuanLyTiemThuocFinalVersion.View.Thuoc
                     whereThuoc + " " + whereCongDung + " " + whereThanhPhan;
 
                 DataTable tbl = DataBaseFunction.GetDataToTable(sqlSelect);
-                dgvThuoc.DataSource = tbl;
-                //Cho người dùng thêm dữ liệu trực tiếp
+                dgvThuoc.DataSource = tbl;               
                 dgvThuoc.AllowUserToAddRows = false;
                 dgvThuoc.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
 
@@ -198,7 +197,7 @@ namespace QuanLyTiemThuocFinalVersion.View.Thuoc
 
             DataTable tbl = DataBaseFunction.GetDataToTable(sqlSelect);
             dgvThuoc.DataSource = tbl;
-            //khong Cho người dùng thêm dữ liệu trực tiếp
+           
             dgvThuoc.AllowUserToAddRows = false;
             dgvThuoc.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
 
@@ -235,7 +234,7 @@ namespace QuanLyTiemThuocFinalVersion.View.Thuoc
 
             DataTable tbl = DataBaseFunction.GetDataToTable(sqlSelect);
             dgvThuoc.DataSource = tbl;
-            //khong Cho người dùng thêm dữ liệu trực tiếp
+           
             dgvThuoc.AllowUserToAddRows = false;
             dgvThuoc.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
 

@@ -9,7 +9,7 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
 {
     public partial class FormThongKeHoaDonNhap : Form
     {
-        public FormThongKeHoaDonNhap() 
+        public FormThongKeHoaDonNhap()
         {
             InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
             LoadDataToCbxNhanVien();
         }
 
-        private void btnXemTatCa_Click(object sender, EventArgs e) 
+        private void btnXemTatCa_Click(object sender, EventArgs e)
         {
             dgvHoaDonNhap.DataSource = null;
             LoadDataToTable();
@@ -36,9 +36,9 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
             }
             else
             {
-                string whereMaHoaDonNhap = " and hdn.Id = " + cbxHoaDonNhap.SelectedValue.ToString() + " "; // đoạn này nghĩa là
-                string whereNhanVien = " and hdn.IdNhanVien = " + cbxNhanVien.SelectedValue.ToString() + " ";
-                string whereNhaCungCap = " and hdn.IdNhaCungCap = " + cbxNhaCungCap.SelectedValue.ToString() + " ";
+                string whereMaHoaDonNhap = string.IsNullOrEmpty(maHoaDonNhap) == true ? "" : " and hdn.Id = " + cbxHoaDonNhap.SelectedValue.ToString() + " "; // đoạn này nghĩa là
+                string whereNhanVien = string.IsNullOrEmpty(maNhanVien) == true ? "" : " and hdn.IdNhanVien = " + cbxNhanVien.SelectedValue.ToString() + " ";
+                string whereNhaCungCap = string.IsNullOrEmpty(maNhaCungCap) == true ? "" : " and hdn.IdNhaCungCap = " + cbxNhaCungCap.SelectedValue.ToString() + " ";
 
                 string sqlSearch = "Select hdn.Id, " +
                     " (select nv.Ten From NhanVien nv where nv.Id = hdn.IdNhanVien) as 'Tên Nhân Viên', " +

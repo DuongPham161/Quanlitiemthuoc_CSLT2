@@ -11,7 +11,26 @@ namespace QuanLyTiemThuocFinalVersion.Utility
 {
     public static class TienIch
     {
-               
+        public static void ShowCanhBao(string tieuDe, string noiDung)
+        {
+            MessageBox.Show(noiDung, tieuDe, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public static void ShowThanhCong(string tieuDe, string noiDung)
+        {
+            MessageBox.Show(noiDung, tieuDe, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static DialogResult ShowXacThuc(string tieuDe, string noiDung)
+        {
+            return MessageBox.Show(noiDung, tieuDe, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        public static void ShowLoi(string tieuDe, string noiDung)
+        {
+            MessageBox.Show(noiDung, tieuDe, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public static string XoaTatCaKhoangTrang(string text)
         {
             return Regex.Replace(text.Trim(), @"\s+", "");
@@ -21,15 +40,15 @@ namespace QuanLyTiemThuocFinalVersion.Utility
             return Regex.Replace(text.Trim(), @"\s+", " ");
         }
 
-        public static string ToTitleCase(string title) // ham vua xoa khoang trang vua chuyen sang chu thuong
+        public static string ToTitleCase(string title)
         {
-                 
+
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(XoaKhoangTrang(title.ToLower()));
         }
 
-        public static string ToUpperFistCharacter(string text) //ham viet hoa chu thuong thanh chu hoa
+        public static string ToUpperFistCharacter(string text)
         {
-            return Capitalize(XoaKhoangTrang(text).ToLower()); //xoa khoang trang va chu sau khoang trang in hoa thanh in thuong
+            return Capitalize(XoaKhoangTrang(text).ToLower());
         }
 
         private static string Capitalize(string s)
