@@ -51,6 +51,7 @@ namespace QuanLyTiemThuocFinalVersion.Utility
             return Capitalize(XoaKhoangTrang(text).ToLower());
         }
 
+
         private static string Capitalize(string s)
         {
             if (string.IsNullOrEmpty(s))

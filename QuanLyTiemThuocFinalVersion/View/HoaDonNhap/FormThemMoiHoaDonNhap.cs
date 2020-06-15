@@ -319,7 +319,7 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
                 foreach (DataGridViewRow row in dgvHoaDonNhap.Rows)
                 {
                     float donGia = float.Parse(row.Cells[2].Value.ToString());
-                    float giaBan = donGia * (float)1.1;
+                    float giaBan = donGia * (float)1.1; // cau 3
 
                     //thuốc này chưa có trong db
                     if (cbxTenThuoc.FindString(row.Cells[0].Value.ToString()) == -1)
@@ -344,14 +344,15 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
                     //cập nhật thông tin cho thuốc
                     else
                     {
+                        
                         Model.Entity.Thuoc thuocCu = new Model.Entity.Thuoc
                         {
                             Id = DataBaseFunction.GetItemId("Select * from Thuoc where Ten=N'" + row.Cells[0].Value.ToString() + "'"),
                             SoLuongHienCo = Int32.Parse(row.Cells[1].Value.ToString()),
                             DonGiaNhap = donGia,
                             GiaBan = giaBan,
-                            NgaySanXuat = DateTime.Parse(row.Cells[5].Value.ToString()),
-                            HanSuDung = DateTime.Parse(row.Cells[6].Value.ToString())
+                            NgaySanXuat = DateTime.ParseExact(row.Cells[5].Value.ToString(),"dd - MM - yyyy", null),
+                            HanSuDung = DateTime.ParseExact(row.Cells[6].Value.ToString(), "dd - MM - yyyy", null)
                         };
 
                         float soLuongCu = DataBaseFunction.GetItemId("Select SoLuongHienCo from Thuoc where Id=" + thuocCu.Id);

@@ -131,9 +131,13 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
         {
             string maHoaDon = dgvHoaDonNhap.Rows[e.RowIndex].Cells[0].Value.ToString();
             string sqlSelect = "Select h.Id as 'Mã Bản Ghi',  h.IdHoaDonNhap as 'Mã Hóa Đơn Nhập', " +
-                " (select t.Ten  from Thuoc t where t.Id = h.IdThuoc) as 'Tên Thuốc', " +
-                " h.SoLuongNhap as 'Số Lượng Nhập', h.DonGia as 'Đơn Giá', h.KhuyenMai as 'Khuyến Mại', h.ThanhTien as 'Thành Tiền'  " +
-                " from HoaDonNhapDetail h where IdHoaDonNhap = " + maHoaDon;
+                " t.Ten as 'Tên Thuốc', " +
+                " h.SoLuongNhap as 'Số Lượng Nhập', h.DonGia as 'Đơn Giá', h.KhuyenMai as 'Khuyến Mại', " +
+                " h.ThanhTien as 'Thành Tiền' " +
+                " from HoaDonNhapDetail h " +
+                " join Thuoc t " +
+                " on t.Id = h.IdThuoc " +
+                " where IdHoaDonNhap = " + maHoaDon;
             DataTable tableChiTietHoaDonNhap = DataBaseFunction.GetDataToTable(sqlSelect);
 
             dgvHoaDonNhap.DataSource = tableChiTietHoaDonNhap;
