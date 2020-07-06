@@ -1,0 +1,592 @@
+USE [Quanlitiemthuoc]
+GO
+/****** Object:  Table [dbo].[ChuyenMon]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChuyenMon](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_ChuyenMon] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CongDung]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CongDung](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+ CONSTRAINT [PK_CongDung] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DangDieuChe]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DangDieuChe](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+ CONSTRAINT [PK_DangDieuChe] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DonViTinh]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DonViTinh](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+ CONSTRAINT [PK_DonViTinh] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonBan]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonBan](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[NgayBan] [datetime] NULL,
+	[IdNhanVien] [int] NULL,
+	[IdKhach] [int] NULL,
+	[TongTien] [float] NULL,
+ CONSTRAINT [PK_HoaDonBan] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonBanDetail]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonBanDetail](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdHoaDonBan] [int] NOT NULL,
+	[IdThuoc] [int] NOT NULL,
+	[SoLuong] [int] NOT NULL,
+	[GiamGia] [float] NULL,
+	[ThanhTien] [float] NULL,
+ CONSTRAINT [PK_HoaDonBanDetail] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonNhap]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonNhap](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdNhanVien] [int] NULL,
+	[IdNhaCungCap] [int] NULL,
+	[NgayNhap] [datetime] NULL,
+	[TongTien] [float] NULL,
+ CONSTRAINT [PK_HoaDonNhap] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonNhapDetail]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonNhapDetail](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdHoaDonNhap] [int] NULL,
+	[IdThuoc] [int] NULL,
+	[SoLuongNhap] [int] NULL,
+	[DonGia] [float] NULL,
+	[KhuyenMai] [float] NULL,
+	[ThanhTien] [float] NULL,
+ CONSTRAINT [PK_HoaDonNhapDetail] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KhachHang](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+	[DiaChi] [nvarchar](max) NULL,
+	[DienThoai] [nvarchar](max) NULL,
+ CONSTRAINT [PK_KhachHang] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhaCungCap]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhaCungCap](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+	[DiaChi] [nvarchar](max) NULL,
+	[SoDienThoai] [nvarchar](max) NULL,
+ CONSTRAINT [PK_NhaCungCap] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhanVien](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdChuyenMon] [int] NOT NULL,
+	[IdTrinhDo] [int] NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+	[NgaySinh] [datetime] NULL,
+	[GioiTinh] [bit] NULL,
+	[DiaChi] [nvarchar](max) NULL,
+	[DienThoai] [nvarchar](max) NULL,
+ CONSTRAINT [PK_NhanVien] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NuocSanXuat]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NuocSanXuat](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+ CONSTRAINT [PK_NuocSanXuat] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Thuoc]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Thuoc](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NULL,
+	[IdDonViTinh] [int] NULL,
+	[IdDangDieuChe] [int] NULL,
+	[IdNuocSanXuat] [int] NULL,
+	[ThanhPhan] [nvarchar](max) NULL,
+	[DonGiaNhap] [float] NULL,
+	[GiaBan] [float] NULL,
+	[SoLuongHienCo] [int] NULL,
+	[NgaySanXuat] [datetime] NULL,
+	[HanSuDung] [datetime] NULL,
+	[ChongChiDinh] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Thuoc] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ThuocCongDung]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ThuocCongDung](
+	[IdThuoc] [int] NOT NULL,
+	[IdCongDung] [int] NOT NULL,
+	[GhiChu] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TrinhDo]    Script Date: 7/2/2020 8:49:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TrinhDo](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_TrinhDo] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[ChuyenMon] ON 
+GO
+INSERT [dbo].[ChuyenMon] ([Id], [Ten]) VALUES (1, N'thuốc tây')
+GO
+INSERT [dbo].[ChuyenMon] ([Id], [Ten]) VALUES (2, N'thuốc nam')
+GO
+SET IDENTITY_INSERT [dbo].[ChuyenMon] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CongDung] ON 
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (1, N'tiêm tĩnh mạch, tiêm đường trong xương. tăng huyết áp')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (2, N'đau đầu')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (3, N'giảm đau')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (4, N'chống co giật')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (5, N'đau răng')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (6, N'đau bụng')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (7, N'giảm lượng đường trong máu')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (8, N'làm đẹp da')
+GO
+INSERT [dbo].[CongDung] ([Id], [Ten]) VALUES (9, N'chống run')
+GO
+SET IDENTITY_INSERT [dbo].[CongDung] OFF
+GO
+SET IDENTITY_INSERT [dbo].[DangDieuChe] ON 
+GO
+INSERT [dbo].[DangDieuChe] ([Id], [Ten]) VALUES (1, N'dung dịch tiêm')
+GO
+INSERT [dbo].[DangDieuChe] ([Id], [Ten]) VALUES (2, N'viên nén')
+GO
+INSERT [dbo].[DangDieuChe] ([Id], [Ten]) VALUES (3, N'viên sủi')
+GO
+INSERT [dbo].[DangDieuChe] ([Id], [Ten]) VALUES (4, N'dạng bột')
+GO
+INSERT [dbo].[DangDieuChe] ([Id], [Ten]) VALUES (5, N'dung dịch')
+GO
+SET IDENTITY_INSERT [dbo].[DangDieuChe] OFF
+GO
+SET IDENTITY_INSERT [dbo].[DonViTinh] ON 
+GO
+INSERT [dbo].[DonViTinh] ([Id], [Ten]) VALUES (1, N'1 hộp 2 vỉ')
+GO
+INSERT [dbo].[DonViTinh] ([Id], [Ten]) VALUES (2, N'1 hộp 8 vỉ')
+GO
+INSERT [dbo].[DonViTinh] ([Id], [Ten]) VALUES (3, N'1 hộp 10 tuýp')
+GO
+INSERT [dbo].[DonViTinh] ([Id], [Ten]) VALUES (4, N'1 chai')
+GO
+INSERT [dbo].[DonViTinh] ([Id], [Ten]) VALUES (5, N'1 ống')
+GO
+INSERT [dbo].[DonViTinh] ([Id], [Ten]) VALUES (6, N'1 gói')
+GO
+SET IDENTITY_INSERT [dbo].[DonViTinh] OFF
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonBan] ON 
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (1, CAST(N'2020-06-05T23:36:25.040' AS DateTime), 1, 3, 12777600)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (2, CAST(N'2019-06-05T23:39:02.257' AS DateTime), 2, 1, 3025000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (3, CAST(N'2020-06-07T14:40:39.717' AS DateTime), 3, 5, 198264)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (4, CAST(N'2020-06-07T15:14:22.667' AS DateTime), 2, 3, 9900000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (5, CAST(N'2020-06-07T15:15:08.317' AS DateTime), 2, 1, 2750000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (6, CAST(N'2020-06-07T15:19:48.587' AS DateTime), 4, 1, 605000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (7, CAST(N'2020-06-07T15:22:06.643' AS DateTime), 4, 1, 440000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (8, CAST(N'2020-06-07T15:25:45.620' AS DateTime), 2, 2, 1045000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (9, CAST(N'2020-06-07T22:55:40.597' AS DateTime), 2, 2, 133100)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (10, CAST(N'2020-06-08T22:40:33.173' AS DateTime), 3, 1, 12100)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (11, CAST(N'2020-06-09T22:38:54.357' AS DateTime), 3, 2, 396000)
+GO
+INSERT [dbo].[HoaDonBan] ([Id], [NgayBan], [IdNhanVien], [IdKhach], [TongTien]) VALUES (12, CAST(N'2020-06-16T00:10:20.650' AS DateTime), 3, 3, 8250000)
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonBan] OFF
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonBanDetail] ON 
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (1, 1, 3, 22, 4, 12777600)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (2, 2, 2, 5, 0, 3025000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (3, 3, 1, 7, 0, 40964)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (4, 3, 4, 2, 0, 154000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (5, 3, 6, 2, 0, 3300)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (6, 4, 3, 30, 0, 9900000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (7, 5, 1, 1, 0, 2750000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (8, 6, 2, 1, 0, 605000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (9, 7, 6, 1, 0, 440000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (10, 8, 6, 1, 0, 440000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (11, 9, 1, 11, 0, 133100)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (12, 10, 1, 1, 0, 12100)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (13, 11, 4, 12, 0, 396000)
+GO
+INSERT [dbo].[HoaDonBanDetail] ([Id], [IdHoaDonBan], [IdThuoc], [SoLuong], [GiamGia], [ThanhTien]) VALUES (14, 12, 1, 25, 0, 8250000)
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonBanDetail] OFF
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonNhap] ON 
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (1, 1, 2, CAST(N'2020-06-05T23:25:29.893' AS DateTime), 495000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (2, 1, 2, CAST(N'2020-06-05T23:25:29.893' AS DateTime), 495000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (3, 4, 1, CAST(N'2020-06-07T14:48:31.270' AS DateTime), 2262000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (4, 3, 3, CAST(N'2020-06-07T14:48:31.270' AS DateTime), 910000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (5, 1, 1, CAST(N'2020-06-07T21:07:13.953' AS DateTime), 11)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (6, 1, 1, CAST(N'2020-06-07T21:07:13.953' AS DateTime), 11000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (7, 3, 6, CAST(N'2020-06-07T22:59:13.070' AS DateTime), 3400)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (8, 1, 2, CAST(N'2020-06-07T23:24:09.780' AS DateTime), 1200000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (9, 2, 4, CAST(N'2020-09-01T00:00:00.000' AS DateTime), 1832000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (10, 1, 1, CAST(N'2020-06-16T00:21:23.007' AS DateTime), 10000)
+GO
+INSERT [dbo].[HoaDonNhap] ([Id], [IdNhanVien], [IdNhaCungCap], [NgayNhap], [TongTien]) VALUES (11, 1, 1, CAST(N'2020-02-16T00:23:23.000' AS DateTime), 300000)
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonNhap] OFF
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonNhapDetail] ON 
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (1, 1, 2, 0, 550000, 10, 495000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (2, 2, 3, 0, 550000, 10, 495000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (3, 3, 1, 0, 2500000, 22, 1950000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (4, 3, 6, 0, 400000, 22, 312000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (5, 4, 4, 0, 1000000, 30, 700000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (6, 4, 3, 0, 300000, 30, 210000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (7, 5, 1, 0, 11, 0, 11)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (8, 6, 1, 0, 11000, 0, 11000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (9, 7, 4, 0, 3000, 0, 3000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (10, 7, 2, 0, 400, 0, 400)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (11, 8, 2, 0, 1200000, 0, 1200000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (12, 9, 1, 0, 300000, 0, 300000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (13, 9, 3, 0, 12000, 0, 12000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (14, 9, 7, 0, 1520000, 0, 1520000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (15, 10, 3, 0, 10000, 0, 10000)
+GO
+INSERT [dbo].[HoaDonNhapDetail] ([Id], [IdHoaDonNhap], [IdThuoc], [SoLuongNhap], [DonGia], [KhuyenMai], [ThanhTien]) VALUES (16, 11, 1, 0, 300000, 0, 300000)
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonNhapDetail] OFF
+GO
+SET IDENTITY_INSERT [dbo].[KhachHang] ON 
+GO
+INSERT [dbo].[KhachHang] ([Id], [Ten], [DiaChi], [DienThoai]) VALUES (1, N'phạm thị an', N'Hà nội', N'0815447552')
+GO
+INSERT [dbo].[KhachHang] ([Id], [Ten], [DiaChi], [DienThoai]) VALUES (2, N'trần văn thắng', N'Hà nam', N'0815442556')
+GO
+INSERT [dbo].[KhachHang] ([Id], [Ten], [DiaChi], [DienThoai]) VALUES (3, N'phan chu trinh', N'Nam định', N'0378546154')
+GO
+INSERT [dbo].[KhachHang] ([Id], [Ten], [DiaChi], [DienThoai]) VALUES (4, N'Phạm Thị An', N'Hồ chí minh', N'0315488777')
+GO
+INSERT [dbo].[KhachHang] ([Id], [Ten], [DiaChi], [DienThoai]) VALUES (5, N'chu kiều trang', N'Quảng ninh', N'0598445221')
+GO
+SET IDENTITY_INSERT [dbo].[KhachHang] OFF
+GO
+SET IDENTITY_INSERT [dbo].[NhaCungCap] ON 
+GO
+INSERT [dbo].[NhaCungCap] ([Id], [Ten], [DiaChi], [SoDienThoai]) VALUES (1, N'Công Ty Cổ Phần Vĩnh Phúc', N'Vĩnh Phúc', N'0243555666')
+GO
+INSERT [dbo].[NhaCungCap] ([Id], [Ten], [DiaChi], [SoDienThoai]) VALUES (2, N'Công Ty Cổ Phần Abc', N'Quảng Ninh', N'0243666555')
+GO
+INSERT [dbo].[NhaCungCap] ([Id], [Ten], [DiaChi], [SoDienThoai]) VALUES (3, N'Công Ty Cổ Phần Hapacol', N'Hà Nội', N'0243888666')
+GO
+INSERT [dbo].[NhaCungCap] ([Id], [Ten], [DiaChi], [SoDienThoai]) VALUES (4, N'Công Ty Cổ Phần Alisa', N'New York', N'0125554411')
+GO
+INSERT [dbo].[NhaCungCap] ([Id], [Ten], [DiaChi], [SoDienThoai]) VALUES (5, N'Công Ty Cổ Phần JP', N'Tokyo', N'015222444')
+GO
+INSERT [dbo].[NhaCungCap] ([Id], [Ten], [DiaChi], [SoDienThoai]) VALUES (6, N'Công Ty Cổ Phần Busan', N'Busan', N'001245768')
+GO
+SET IDENTITY_INSERT [dbo].[NhaCungCap] OFF
+GO
+SET IDENTITY_INSERT [dbo].[NhanVien] ON 
+GO
+INSERT [dbo].[NhanVien] ([Id], [IdChuyenMon], [IdTrinhDo], [Ten], [NgaySinh], [GioiTinh], [DiaChi], [DienThoai]) VALUES (1, 1, 1, N'Phạm Văn Anh', CAST(N'1990-06-05T23:14:38.000' AS DateTime), 1, N'Hà nội', N'0864795221')
+GO
+INSERT [dbo].[NhanVien] ([Id], [IdChuyenMon], [IdTrinhDo], [Ten], [NgaySinh], [GioiTinh], [DiaChi], [DienThoai]) VALUES (2, 1, 1, N'Phạm Ngọc Anh', CAST(N'1977-01-03T23:14:38.000' AS DateTime), 0, N'Hà nam', N'0859447551')
+GO
+INSERT [dbo].[NhanVien] ([Id], [IdChuyenMon], [IdTrinhDo], [Ten], [NgaySinh], [GioiTinh], [DiaChi], [DienThoai]) VALUES (3, 2, 2, N'Nguyễn Hà', CAST(N'1988-01-19T23:14:38.000' AS DateTime), 0, N'Lạng sơn', N'0356881774')
+GO
+INSERT [dbo].[NhanVien] ([Id], [IdChuyenMon], [IdTrinhDo], [Ten], [NgaySinh], [GioiTinh], [DiaChi], [DienThoai]) VALUES (4, 1, 1, N'Trần Văn Kiên', CAST(N'1991-02-09T00:00:00.000' AS DateTime), 1, N'Hà Nội', N'038552995')
+GO
+SET IDENTITY_INSERT [dbo].[NhanVien] OFF
+GO
+SET IDENTITY_INSERT [dbo].[NuocSanXuat] ON 
+GO
+INSERT [dbo].[NuocSanXuat] ([Id], [Ten]) VALUES (1, N'việt nam')
+GO
+INSERT [dbo].[NuocSanXuat] ([Id], [Ten]) VALUES (2, N'nhật bản')
+GO
+INSERT [dbo].[NuocSanXuat] ([Id], [Ten]) VALUES (3, N'mỹ')
+GO
+INSERT [dbo].[NuocSanXuat] ([Id], [Ten]) VALUES (4, N'hàn quốc')
+GO
+SET IDENTITY_INSERT [dbo].[NuocSanXuat] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Thuoc] ON 
+GO
+INSERT [dbo].[Thuoc] ([Id], [Ten], [IdDonViTinh], [IdDangDieuChe], [IdNuocSanXuat], [ThanhPhan], [DonGiaNhap], [GiaBan], [SoLuongHienCo], [NgaySanXuat], [HanSuDung], [ChongChiDinh]) VALUES (1, N'Adrenalin', 1, 1, 1, N'Adrenalin', 300000, 330000, 116, CAST(N'2020-02-16T00:00:00.000' AS DateTime), CAST(N'2019-01-16T00:00:00.000' AS DateTime), N'không dùng cho phụ nữ có thai và đang cho con bú')
+GO
+INSERT [dbo].[Thuoc] ([Id], [Ten], [IdDonViTinh], [IdDangDieuChe], [IdNuocSanXuat], [ThanhPhan], [DonGiaNhap], [GiaBan], [SoLuongHienCo], [NgaySanXuat], [HanSuDung], [ChongChiDinh]) VALUES (2, N'Panadol', 1, 2, 1, N'paracetamol', 12000, 13200, 101, CAST(N'2020-07-06T00:00:00.000' AS DateTime), CAST(N'2020-07-01T00:00:00.000' AS DateTime), N'Người mẫn cảm với paracetamol Mẫn cảm và dị ứng với caffeine hoặc các thành phần khác trong thuốc Người có tiền sử nghiện rượu')
+GO
+INSERT [dbo].[Thuoc] ([Id], [Ten], [IdDonViTinh], [IdDangDieuChe], [IdNuocSanXuat], [ThanhPhan], [DonGiaNhap], [GiaBan], [SoLuongHienCo], [NgaySanXuat], [HanSuDung], [ChongChiDinh]) VALUES (3, N'Panadol Extra', 2, 3, 2, N'paracetamol, Adrenalin', 10000, 11000, 277, CAST(N'2020-06-16T00:00:00.000' AS DateTime), CAST(N'2020-06-16T00:00:00.000' AS DateTime), N'Người mẫn cảm với paracetamol Mẫn cảm và dị ứng với caffeine hoặc các thành phần khác trong thuốc Người có tiền sử nghiện rượu')
+GO
+INSERT [dbo].[Thuoc] ([Id], [Ten], [IdDonViTinh], [IdDangDieuChe], [IdNuocSanXuat], [ThanhPhan], [DonGiaNhap], [GiaBan], [SoLuongHienCo], [NgaySanXuat], [HanSuDung], [ChongChiDinh]) VALUES (4, N'Panadol Hr', 3, 1, 3, N'paracetamol, Adrenalin', 30000, 33000, 78, CAST(N'2020-07-06T00:00:00.000' AS DateTime), CAST(N'2029-07-04T00:00:00.000' AS DateTime), N'Người mẫn cảm với paracetamol Mẫn cảm và dị ứng với caffeine hoặc các thành phần khác trong thuốc Người có tiền sử nghiện rượu')
+GO
+INSERT [dbo].[Thuoc] ([Id], [Ten], [IdDonViTinh], [IdDangDieuChe], [IdNuocSanXuat], [ThanhPhan], [DonGiaNhap], [GiaBan], [SoLuongHienCo], [NgaySanXuat], [HanSuDung], [ChongChiDinh]) VALUES (6, N'Hahacol', 6, 4, 4, N'bột ý dĩ, thiên thảo', 40000, 45000, 94, CAST(N'2018-07-06T00:00:00.000' AS DateTime), CAST(N'2020-01-12T00:00:00.000' AS DateTime), N'')
+GO
+INSERT [dbo].[Thuoc] ([Id], [Ten], [IdDonViTinh], [IdDangDieuChe], [IdNuocSanXuat], [ThanhPhan], [DonGiaNhap], [GiaBan], [SoLuongHienCo], [NgaySanXuat], [HanSuDung], [ChongChiDinh]) VALUES (7, N'Hoạt huyết nhất nhất', 1, 2, 1, N'axe', 1520000, 1672000, 250, CAST(N'2020-01-09T00:00:00.000' AS DateTime), CAST(N'2018-09-06T00:00:00.000' AS DateTime), N'Người mẫn cảm với paracetamol Mẫn cảm và dị ứng với caffeine hoặc các thành phần khác trong thuốc Người có tiền sử nghiện rượu')
+GO
+SET IDENTITY_INSERT [dbo].[Thuoc] OFF
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (1, 1, N'Không dùng cho phụ nữ có thai và đang cho con bú hoặc người mẫn cảm với thuốc.')
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (2, 2, N'Không dùng cho phụ nữ có thai và đang cho con bú hoặc người mẫn cảm với thuốc.')
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (3, 2, N'Không dùng cho phụ nữ có thai và đang cho con bú hoặc người mẫn cảm với thuốc.')
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (4, 2, NULL)
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (4, 4, N'Không dùng cho phụ nữ có thai và đang cho con bú hoặc người mẫn cảm với thuốc.')
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (3, 3, N'Không dùng cho phụ nữ có thai và đang cho con bú hoặc người mẫn cảm với thuốc.')
+GO
+INSERT [dbo].[ThuocCongDung] ([IdThuoc], [IdCongDung], [GhiChu]) VALUES (6, 8, N'Không dùng cho phụ nữ có thai và đang cho con bú hoặc người mẫn cảm với thuốc.')
+GO
+SET IDENTITY_INSERT [dbo].[TrinhDo] ON 
+GO
+INSERT [dbo].[TrinhDo] ([Id], [Ten]) VALUES (1, N'thạc sĩ')
+GO
+INSERT [dbo].[TrinhDo] ([Id], [Ten]) VALUES (2, N'chuyên khoa 1')
+GO
+INSERT [dbo].[TrinhDo] ([Id], [Ten]) VALUES (3, N'chuyên khoa 2')
+GO
+INSERT [dbo].[TrinhDo] ([Id], [Ten]) VALUES (4, N'tiến sĩ')
+GO
+SET IDENTITY_INSERT [dbo].[TrinhDo] OFF
+GO
+ALTER TABLE [dbo].[HoaDonBan]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonBan_KhachHang] FOREIGN KEY([IdKhach])
+REFERENCES [dbo].[KhachHang] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonBan] CHECK CONSTRAINT [FK_HoaDonBan_KhachHang]
+GO
+ALTER TABLE [dbo].[HoaDonBan]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonBan_NhanVien] FOREIGN KEY([IdNhanVien])
+REFERENCES [dbo].[NhanVien] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonBan] CHECK CONSTRAINT [FK_HoaDonBan_NhanVien]
+GO
+ALTER TABLE [dbo].[HoaDonBanDetail]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonBanDetail_HoaDonBan] FOREIGN KEY([IdHoaDonBan])
+REFERENCES [dbo].[HoaDonBan] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonBanDetail] CHECK CONSTRAINT [FK_HoaDonBanDetail_HoaDonBan]
+GO
+ALTER TABLE [dbo].[HoaDonBanDetail]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonBanDetail_Thuoc] FOREIGN KEY([IdThuoc])
+REFERENCES [dbo].[Thuoc] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonBanDetail] CHECK CONSTRAINT [FK_HoaDonBanDetail_Thuoc]
+GO
+ALTER TABLE [dbo].[HoaDonNhap]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonNhap_NhaCungCap] FOREIGN KEY([IdNhaCungCap])
+REFERENCES [dbo].[NhaCungCap] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonNhap] CHECK CONSTRAINT [FK_HoaDonNhap_NhaCungCap]
+GO
+ALTER TABLE [dbo].[HoaDonNhap]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonNhap_NhanVien] FOREIGN KEY([IdNhanVien])
+REFERENCES [dbo].[NhanVien] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonNhap] CHECK CONSTRAINT [FK_HoaDonNhap_NhanVien]
+GO
+ALTER TABLE [dbo].[HoaDonNhapDetail]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonNhapDetail_HoaDonNhap] FOREIGN KEY([IdHoaDonNhap])
+REFERENCES [dbo].[HoaDonNhap] ([Id])
+GO
+ALTER TABLE [dbo].[HoaDonNhapDetail] CHECK CONSTRAINT [FK_HoaDonNhapDetail_HoaDonNhap]
+GO
+ALTER TABLE [dbo].[NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_ChuyenMon] FOREIGN KEY([IdChuyenMon])
+REFERENCES [dbo].[ChuyenMon] ([Id])
+GO
+ALTER TABLE [dbo].[NhanVien] CHECK CONSTRAINT [FK_NhanVien_ChuyenMon]
+GO
+ALTER TABLE [dbo].[NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_TrinhDo] FOREIGN KEY([IdTrinhDo])
+REFERENCES [dbo].[TrinhDo] ([Id])
+GO
+ALTER TABLE [dbo].[NhanVien] CHECK CONSTRAINT [FK_NhanVien_TrinhDo]
+GO
+ALTER TABLE [dbo].[Thuoc]  WITH CHECK ADD  CONSTRAINT [FK_Thuoc_DangDieuChe] FOREIGN KEY([IdDangDieuChe])
+REFERENCES [dbo].[DangDieuChe] ([Id])
+GO
+ALTER TABLE [dbo].[Thuoc] CHECK CONSTRAINT [FK_Thuoc_DangDieuChe]
+GO
+ALTER TABLE [dbo].[Thuoc]  WITH CHECK ADD  CONSTRAINT [FK_Thuoc_DonViTinh] FOREIGN KEY([IdDonViTinh])
+REFERENCES [dbo].[DonViTinh] ([Id])
+GO
+ALTER TABLE [dbo].[Thuoc] CHECK CONSTRAINT [FK_Thuoc_DonViTinh]
+GO
+ALTER TABLE [dbo].[Thuoc]  WITH CHECK ADD  CONSTRAINT [FK_Thuoc_NuocSanXuat] FOREIGN KEY([IdNuocSanXuat])
+REFERENCES [dbo].[NuocSanXuat] ([Id])
+GO
+ALTER TABLE [dbo].[Thuoc] CHECK CONSTRAINT [FK_Thuoc_NuocSanXuat]
+GO
+ALTER TABLE [dbo].[ThuocCongDung]  WITH CHECK ADD  CONSTRAINT [FK_ThuocCongDung_CongDung] FOREIGN KEY([IdCongDung])
+REFERENCES [dbo].[CongDung] ([Id])
+GO
+ALTER TABLE [dbo].[ThuocCongDung] CHECK CONSTRAINT [FK_ThuocCongDung_CongDung]
+GO
+ALTER TABLE [dbo].[ThuocCongDung]  WITH CHECK ADD  CONSTRAINT [FK_ThuocCongDung_Thuoc] FOREIGN KEY([IdThuoc])
+REFERENCES [dbo].[Thuoc] ([Id])
+GO
+ALTER TABLE [dbo].[ThuocCongDung] CHECK CONSTRAINT [FK_ThuocCongDung_Thuoc]
+GO
