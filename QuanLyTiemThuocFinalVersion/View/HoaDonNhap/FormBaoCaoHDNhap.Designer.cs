@@ -90,6 +90,7 @@
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(1050, 440);
             this.dgvHoaDonNhap.TabIndex = 16;
             this.dgvHoaDonNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellClick);
+            this.dgvHoaDonNhap.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellDoubleClick);
             // 
             // FormBaoCaoHDNhap
             // 

@@ -70,6 +70,7 @@
             this.dgvHoaDonBan.RowHeadersWidth = 62;
             this.dgvHoaDonBan.Size = new System.Drawing.Size(1215, 486);
             this.dgvHoaDonBan.TabIndex = 4;
+            this.dgvHoaDonBan.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonBan_CellDoubleClick);
             // 
             // button1
             // 

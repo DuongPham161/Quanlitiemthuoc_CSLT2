@@ -78,7 +78,6 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
         {
             tvSoLuongNhap.Text = TienIch.XoaTatCaKhoangTrang(tvSoLuongNhap.Text);
 
-            //validate luôn >=0
             string soLuongNhap = TienIch.XoaTatCaKhoangTrang(tvSoLuongNhap.Text);
             if (soLuongNhap.All(char.IsDigit))
             {

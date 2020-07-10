@@ -36,9 +36,12 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
             }
             else
             {
-                string whereMaHoaDonNhap = string.IsNullOrEmpty(maHoaDonNhap) == true ? "" : " and hdn.Id = " + cbxHoaDonNhap.SelectedValue.ToString() + " "; // đoạn này nghĩa là
-                string whereNhanVien = string.IsNullOrEmpty(maNhanVien) == true ? "" : " and hdn.IdNhanVien = " + cbxNhanVien.SelectedValue.ToString() + " ";
-                string whereNhaCungCap = string.IsNullOrEmpty(maNhaCungCap) == true ? "" : " and hdn.IdNhaCungCap = " + cbxNhaCungCap.SelectedValue.ToString() + " ";
+                string whereMaHoaDonNhap = string.IsNullOrEmpty(maHoaDonNhap) == true ? "" : " and hdn.Id = " + 
+                    cbxHoaDonNhap.SelectedValue.ToString() + " "; 
+                string whereNhanVien = string.IsNullOrEmpty(maNhanVien) == true ? "" : " and hdn.IdNhanVien = " + 
+                    cbxNhanVien.SelectedValue.ToString() + " ";
+                string whereNhaCungCap = string.IsNullOrEmpty(maNhaCungCap) == true ? "" : " and hdn.IdNhaCungCap = " + 
+                    cbxNhaCungCap.SelectedValue.ToString() + " ";
 
                 string sqlSearch = "Select hdn.Id, " +
                     " (select nv.Ten From NhanVien nv where nv.Id = hdn.IdNhanVien) as 'Tên Nhân Viên', " +

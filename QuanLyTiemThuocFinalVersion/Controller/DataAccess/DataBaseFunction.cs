@@ -17,7 +17,7 @@ namespace QuanLyTiemThuocFinalVersion.Controller.DataAccess
         public static void Connect()
         {
             //Thiết lập giá trị cho chuỗi kết nối
-            connString = @"Data Source=DESKTOP-K1R62TD\SQLEXPRESS;Initial Catalog=Quanlitiemthuoc;Integrated Security=True";
+            connString = @"Data Source=Admin\SQLEXPRESS;Initial Catalog=Quanlitiemthuoc;Integrated Security=True";
 
             Conn = new SqlConnection();
             Conn.ConnectionString = connString;
