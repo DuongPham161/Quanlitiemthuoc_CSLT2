@@ -61,7 +61,8 @@ namespace QuanLyTiemThuocFinalVersion.View.Thuoc
             //xem có tra theo công dụng hay không
             if (!string.IsNullOrEmpty(TienIch.XoaKhoangTrang(tbCongDung.Text)))
             {
-                int sqlSelectId = DataBaseFunction.GetItemId("Select Id from CongDung where Ten like N'%" + TienIch.XoaKhoangTrang(tbCongDung.Text) + "%'");
+                int sqlSelectId = DataBaseFunction.GetItemId("Select Id from CongDung where Ten like N'%" + 
+                                                         TienIch.XoaKhoangTrang(tbCongDung.Text) + "%'");
                 if (sqlSelectId > 0)
                 {
                     whereCongDung = "and t.id in( select IdThuoc from ThuocCongDung tvcd where " + " tvcd.IdCongDung=" + sqlSelectId + ")";
@@ -256,6 +257,31 @@ namespace QuanLyTiemThuocFinalVersion.View.Thuoc
                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 col.ReadOnly = true;
             }
-        }
+                    }
+
+        private void dgvThuoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel
+                = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(Type.Missing);
+
+            for (int i = 1; i < dgvThuoc.Columns.Count + 1; i++)
+            {
+                excel.Cells[1, i] = dgvThuoc.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvThuoc.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvThuoc.Columns.Count; j++)
+                {
+                    excel.Cells[i + 2, j + 1] = dgvThuoc.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            excel.Columns.AutoFit();
+            excel.Visible = true;
+            excel.DisplayFullScreen = true;
+
+            dgvThuoc.DataSource = null;
+                    }
     }
 }

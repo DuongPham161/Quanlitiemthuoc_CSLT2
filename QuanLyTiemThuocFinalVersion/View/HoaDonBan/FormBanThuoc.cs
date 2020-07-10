@@ -43,7 +43,7 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonBan
 
         private void tbSoLuong_Leave(object sender, EventArgs e)
         {
-            //validate luôn >=0
+            
             string soLuongBanRa = TienIch.XoaTatCaKhoangTrang(tbSoLuong.Text);
             if (soLuongBanRa.All(char.IsDigit))
             {
@@ -72,11 +72,11 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonBan
                             }
                             else
                             {
-                                // khong lam gi ca
+                                
                             }
                         }
                         else
-                        {// khong lam gi ca
+                        {
 
                         }
                     }
@@ -278,7 +278,7 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonBan
                      hoaDonBanDetail.ThanhTien +
                     " )";
                 DataBaseFunction.ExcuteSQL(sqlInsertHoaDonDetail);
-
+                //cap nhat sau khi ban thuoc
                 int SoLuongThuocCu = DataBaseFunction.GetItemId("Select SoLuongHienCo from Thuoc where Id=" + hoaDonBanDetail.IdThuoc + " ");
                 int SoLuongConLai = SoLuongThuocCu - hoaDonBanDetail.SoLuong;
                 string sqlUpdateThuoc = "Update Thuoc set SoLuongHienCo=" + SoLuongConLai + " where Id=" + hoaDonBanDetail.IdThuoc;

@@ -88,6 +88,7 @@
             this.dgvThuoc.TabIndex = 6;
             this.dgvThuoc.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvThuoc_CellBeginEdit);
             this.dgvThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellClick);
+            this.dgvThuoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellDoubleClick);
             this.dgvThuoc.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellEndEdit);
             // 
             // btnThongKeThuocConHan

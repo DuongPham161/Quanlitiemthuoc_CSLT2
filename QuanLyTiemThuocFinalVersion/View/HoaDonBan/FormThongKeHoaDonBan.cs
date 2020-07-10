@@ -42,5 +42,30 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonBan
             dgvHoaDonBan.Columns[3].HeaderText = "Ngày Bán";
             dgvHoaDonBan.Columns[4].HeaderText = "Tổng Tiền";
         }
+
+        private void dgvHoaDonBan_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel
+                = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(Type.Missing);
+
+            for (int i = 1; i < dgvHoaDonBan.Columns.Count + 1; i++)
+            {
+                excel.Cells[1, i] = dgvHoaDonBan.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvHoaDonBan.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvHoaDonBan.Columns.Count; j++)
+                {
+                    excel.Cells[i + 2, j + 1] = dgvHoaDonBan.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            excel.Columns.AutoFit();
+            excel.Visible = true;
+            excel.DisplayFullScreen = true;
+
+            dgvHoaDonBan.DataSource = null;
+        }
     }
 }

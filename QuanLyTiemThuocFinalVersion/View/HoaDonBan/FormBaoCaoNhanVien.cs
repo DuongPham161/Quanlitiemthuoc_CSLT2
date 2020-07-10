@@ -65,5 +65,30 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonBan
             dgvNhanVien.Columns[2].HeaderText = "Tổng Tiền";
 
         }
+
+        private void dgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel
+                = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(Type.Missing);
+
+            for (int i = 1; i < dgvNhanVien.Columns.Count + 1; i++)
+            {
+                excel.Cells[1, i] = dgvNhanVien.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvNhanVien.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvNhanVien.Columns.Count; j++)
+                {
+                    excel.Cells[i + 2, j + 1] = dgvNhanVien.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            excel.Columns.AutoFit();
+            excel.Visible = true;
+            excel.DisplayFullScreen = true;
+
+            dgvNhanVien.DataSource = null;
+        }
     }
 }

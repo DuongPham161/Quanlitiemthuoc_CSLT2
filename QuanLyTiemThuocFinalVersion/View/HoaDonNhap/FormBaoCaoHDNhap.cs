@@ -79,5 +79,30 @@ namespace QuanLyTiemThuocFinalVersion.View.HoaDonNhap
         {
 
         }
+
+        private void dgvHoaDonNhap_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel
+                = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(Type.Missing);
+
+            for (int i = 1; i < dgvHoaDonNhap.Columns.Count + 1; i++)
+            {
+                excel.Cells[1, i] = dgvHoaDonNhap.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvHoaDonNhap.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvHoaDonNhap.Columns.Count; j++)
+                {
+                    excel.Cells[i + 2, j + 1] = dgvHoaDonNhap.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            excel.Columns.AutoFit();
+            excel.Visible = true;
+            excel.DisplayFullScreen = true;
+
+            dgvHoaDonNhap.DataSource = null;
+        }
     }
 }

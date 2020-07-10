@@ -101,6 +101,7 @@
             this.dgvNhanVien.RowTemplate.Height = 28;
             this.dgvNhanVien.Size = new System.Drawing.Size(880, 375);
             this.dgvNhanVien.TabIndex = 5;
+            this.dgvNhanVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellDoubleClick);
             // 
             // label1
             // 
